@@ -28,6 +28,7 @@ public class Album {
   @ManyToOne
   private Artist artist;
 
+  @Column(name = "local_date", columnDefinition = "DATE")
   private LocalDate date;
 
   public Album() {
