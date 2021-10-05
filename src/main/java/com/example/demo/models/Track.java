@@ -9,13 +9,13 @@ public class Track {
   // Attributes
   @Id
   @SequenceGenerator(
-    name="artist_sequence",
-    sequenceName = "artist_sequence",
+    name="track_sequence",
+    sequenceName = "track_sequence",
     allocationSize = 1
   )
   @GeneratedValue(
     strategy = GenerationType.SEQUENCE,
-    generator = "artist_sequence"
+    generator = "track_sequence"
   )
   private Long id;
 
