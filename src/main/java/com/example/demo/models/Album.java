@@ -1,12 +1,13 @@
 package com.example.demo.models;
 
-import java.util.Objects;
-
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table
 public class Album {
+  // Attributes
   @Id
   @SequenceGenerator(
     name="album_sequence",
@@ -18,16 +19,26 @@ public class Album {
     generator = "album_sequence"
   )
   private Long id;
-  private String artist;
+
   private String title;
+
+  @OneToMany(mappedBy = "album")
+  private List<Track> tracks;
+
+  @ManyToOne
+  private Artist artist;
+
+  private LocalDate date;
 
   public Album() {
   }
 
-  public Album(Long id, String artist, String title) {
+  public Album(Long id, String title, List<Track> tracks, Artist artist, LocalDate date) {
     this.id = id;
-    this.artist = artist;
     this.title = title;
+    this.tracks = tracks;
+    this.artist = artist;
+    this.date = date;
   }
 
   public Long getId() {
@@ -38,14 +49,6 @@ public class Album {
     this.id = id;
   }
 
-  public String getArtist() {
-    return artist;
-  }
-
-  public void setArtist(String artist) {
-    this.artist = artist;
-  }
-
   public String getTitle() {
     return title;
   }
@@ -54,11 +57,32 @@ public class Album {
     this.title = title;
   }
 
-  @Override
-  public String toString() {
-    return "Album [artist=" + artist + ", id=" + id + ", title=" + title + "]";
+  public List<Track> getTracks() {
+    return tracks;
+  }
+
+  public void setTracks(List<Track> tracks) {
+    this.tracks = tracks;
+  }
+
+  public Artist getArtist() {
+    return artist;
+  }
+
+  public void setArtist(Artist artist) {
+    this.artist = artist;
+  }
+
+  public LocalDate getDate() {
+    return date;
+  }
+
+  public void setDate(LocalDate date) {
+    this.date = date;
   }
 
   
+
   
+
 }
