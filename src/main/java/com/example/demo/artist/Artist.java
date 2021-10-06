@@ -1,6 +1,10 @@
-package com.example.demo.models;
+package com.example.demo.artist;
 
 import javax.persistence.*;
+
+import com.example.demo.album.Album;
+import com.example.demo.track.Track;
+
 import java.util.List;
 
 @Entity
@@ -28,6 +32,13 @@ public class Artist {
   private List<Album> albums;
 
   public Artist() {
+  }
+
+  public Artist(Long id, String name, List<Track> tracks, List<Album> albums) {
+    this.id = id;
+    this.name = name;
+    this.tracks = tracks;
+    this.albums = albums;
   }
 
   public Long getId() {

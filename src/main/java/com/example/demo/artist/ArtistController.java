@@ -1,20 +1,33 @@
-package com.example.demo.controllers;
+package com.example.demo.artist;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(path = "api/artists")
 public class ArtistController {
-  @GetMapping("/api/artists")
-  public String getArtists() {
-    return "Getting artists";
+  
+  private final ArtistService artistService;
+
+  @Autowired
+  public ArtistController(ArtistService artistService) {
+    this.artistService = artistService;
   }
 
-  @PostMapping("/api/artists")
+  @GetMapping
+  public List<Artist> getArtists() {
+    return artistService.getArtists();
+  }
+
+  @PostMapping
   public String insertArtist() {
     return "Inserting artist";
   }

@@ -1,6 +1,10 @@
-package com.example.demo.models;
+package com.example.demo.album;
 
 import javax.persistence.*;
+
+import com.example.demo.artist.Artist;
+import com.example.demo.track.Track;
+
 import java.time.LocalDate;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.demo.controllers;
+package com.example.demo.album;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

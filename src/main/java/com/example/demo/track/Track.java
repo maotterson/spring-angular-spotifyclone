@@ -1,6 +1,10 @@
-package com.example.demo.models;
+package com.example.demo.track;
 
 import javax.persistence.*;
+
+import com.example.demo.album.Album;
+import com.example.demo.artist.Artist;
+
 import java.util.List;
 
 @Entity
