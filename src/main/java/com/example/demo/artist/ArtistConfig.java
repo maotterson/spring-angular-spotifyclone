@@ -18,7 +18,12 @@ public class ArtistConfig {
     List<Track> tracks = List.of();
     List<Album> albums = List.of();
     return args -> {
-      new Artist(1L, "Taylor Swift", tracks, albums);
+      Artist taylor = new Artist("Taylor Swift", tracks, albums);
+      Artist lorde = new Artist("Lorde", tracks, albums);
+      
+      repository.saveAll(
+        List.of(taylor, lorde)
+      );
     };
   }
 }
