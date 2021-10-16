@@ -41,6 +41,12 @@ public class Track {
     this.artists = artists;
   }
 
+  public Track(String title, Album album, List<Artist> artists) {
+    this.title = title;
+    this.album = album;
+    this.artists = artists;
+  }
+
   public Long getId() {
     return id;
   }

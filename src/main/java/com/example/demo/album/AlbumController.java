@@ -1,20 +1,30 @@
 package com.example.demo.album;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(path = "api/albums")
 public class AlbumController {
-  @GetMapping("/api/albums")
-  public String getAlbums() {
-    return "Getting albums";
+  private final AlbumService albumService;
+
+  public AlbumController(AlbumService albumService){
+    this.albumService = albumService;
   }
 
-  @PostMapping("/api/albums")
+  @GetMapping
+  public List<Album> getAlbums() {
+    return albumService.getAlbums();
+  }
+
+  @PostMapping
   public String insertAlbum() {
     return "Inserting album";
   }

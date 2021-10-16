@@ -46,6 +46,13 @@ public class Album {
     this.date = date;
   }
 
+  public Album(String title, List<Track> tracks, Artist artist, LocalDate date) {
+    this.title = title;
+    this.tracks = tracks;
+    this.artist = artist;
+    this.date = date;
+  }
+
   public Long getId() {
     return id;
   }

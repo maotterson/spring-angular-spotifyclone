@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArtistService {
   
-  private final ArtistRepository artistRepository;
+  private final IArtistRepository artistRepository;
 
   @Autowired
-  public ArtistService(ArtistRepository artistRepository){
+  public ArtistService(IArtistRepository artistRepository){
     this.artistRepository = artistRepository;
   }
 

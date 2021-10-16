@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class ArtistConfig {
   @Bean
   CommandLineRunner commandLineRunner(
-    ArtistRepository repository
+    IArtistRepository repository
   ){
     List<Track> tracks = List.of();
     List<Album> albums = List.of();
